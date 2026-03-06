@@ -177,6 +177,21 @@ display:none;
 .page.active{
 display:block;
 }
+.btn-order{
+  background:#38bdf8;
+  color:black;
+  font-size:14px;
+  padding:6px 12px;
+  border-radius:4px;
+  margin-top:10px;
+  cursor:pointer;
+  font-weight:bold;
+  border:none;
+}
+.btn-order:hover{
+  background:#22c55e;
+  color:white;
+}
 </style>
 </head>
 
@@ -191,6 +206,7 @@ Social Boost BD
 <a onclick="showPage('home')">Home</a>
 <a onclick="showPage('services')">Services</a>
 <a onclick="showPage('contact')">Contact</a>
+<a onclick="showPage('order')">Order</a>
 </div>
 </nav>
 </header>
@@ -228,7 +244,17 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <h2>আমাদের ফলোয়ার প্যাকেজসমূহ</h2>
 <div class="packages">
 
-<!-- পূর্বের সার্ভিসেস -->
+<div class="card">
+<h3>⭐ Real Active Followers</h3>
+<div class="price">৳200 / 1k</div>
+<ul>
+<li>Speed: 20k/day</li>
+<li>No Refill</li>
+<li>High Quality</li>
+</ul>
+<button class="btn-order" onclick="orderNow('Real Active Followers')">Order</button>
+</div>
+
 <div class="card">
 <h3>🇧🇩 Bangladesh Followers</h3>
 <div class="price">৳120 / 1k</div>
@@ -237,6 +263,7 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>30 Days Refill</li>
 <li>Instant Start</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Bangladesh Followers')">Order</button>
 </div>
 
 <div class="card">
@@ -247,16 +274,7 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>30 Days Refill</li>
 <li>Fast Delivery</li>
 </ul>
-</div>
-
-<div class="card">
-<h3>⭐ Real Active Followers</h3>
-<div class="price">৳200 / 1k</div>
-<ul>
-<li>Speed: 20k/day</li>
-<li>No Refill</li>
-<li>High Quality</li>
-</ul>
+<button class="btn-order" onclick="orderNow('Worldwide Followers')">Order</button>
 </div>
 
 <div class="card">
@@ -267,6 +285,7 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>Low Cost</li>
 <li>No Refill</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Bot Followers')">Order</button>
 </div>
 
 <div class="card">
@@ -277,26 +296,18 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>Hidden Profile Data</li>
 <li>No Refill</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Hidden Data Followers')">Order</button>
 </div>
 
-<div class="card">
-<h3>🚀 Boost Service</h3>
-<div class="price">৳150 / 1$</div>
-<ul>
-<li>Duration: 3 Days</li>
-<li>Post Link Required</li>
-</ul>
-</div>
-
-<!-- নতুন ৪ সার্ভিস -->
 <div class="card">
 <h3>👍 Facebook Page 🇧🇩 Likes</h3>
 <div class="price">৳180 / 1k</div>
 <ul>
 <li>Speed: 10k/day</li>
 <li>30 Days Refill</li>
-<li>High Quality 100% BD </li>
+<li>High Quality 100% BD</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Facebook Page 🇧🇩 Likes')">Order</button>
 </div>
 
 <div class="card">
@@ -307,6 +318,7 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>Fast Delivery</li>
 <li>No Refill</li>
 </ul>
+<button class="btn-order" onclick="orderNow('BD Facebook Post Likes')">Order</button>
 </div>
 
 <div class="card">
@@ -317,6 +329,7 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>Instant Start</li>
 <li>Cheap Price</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Facebook Video/Reels Views')">Order</button>
 </div>
 
 <div class="card">
@@ -327,31 +340,60 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <li>High Quality</li>
 <li>Fast Delivery</li>
 </ul>
+<button class="btn-order" onclick="orderNow('Facebook Comments')">Order</button>
+</div>
+
+<div class="card">
+<h3>🚀 Boost Service</h3>
+<div class="price">৳150 / 1$</div>
+<ul>
+<li>Duration: 3 Days</li>
+<li>Post Link Required</li>
+</ul>
+<button class="btn-order" onclick="orderNow('Boost Service ($)')">Order</button>
 </div>
 
 </div> <!-- packages end -->
+</div>
+</div>
 
+<!-- CONTACT -->
+<div id="contact" class="page">
+<div class="contact-box">
+<h2>যোগাযোগ করুন</h2>
+<p>কোন সমস্যা হলে WhatsApp এ মেসেজ করুন</p>
+<br>
+<a class="btn" href="https://wa.me/8801581619706">WhatsApp Chat</a>
+<br><br>
+<p>bKash Payment</p>
+<h3>01864115856 <button onclick="copyNumber()">Copy</button></h3>
+</div>
+</div>
+
+<!-- ORDER -->
+<div id="order" class="page">
+<div class="container">
 <div class="order-box">
 <h3>অর্ডার করুন</h3>
-<select id="service">
+<select id="service_order">
+<option value="200">Real Active Followers</option>
 <option value="120">Bangladesh Followers</option>
 <option value="90">Worldwide Followers</option>
-<option value="200">Real Active Followers</option>
 <option value="40">Bot Followers</option>
 <option value="40">Hidden Data Followers</option>
-<option value="150">Boost Service ($)</option>
 <option value="180">Facebook Page 🇧🇩 Likes</option>
-<option value="250">🇧🇩BD Facebook Post Likes</option>
+<option value="250">BD Facebook Post Likes</option>
 <option value="20">Facebook Video/Reels Views</option>
 <option value="450">Facebook Comments</option>
+<option value="150">Boost Service ($)</option>
 </select>
 
-<input type="number" id="amount" placeholder="এখানে পরিমাণ লিখুন">
-<input type="text" id="link" placeholder="Page / Profile / Post Link">
+<input type="number" id="amount_order" placeholder="এখানে পরিমাণ লিখুন">
+<input type="text" id="link_order" placeholder="Page / Profile / Post Link">
 <p>📸 <b>WhatsApp এ Payment Screenshot পাঠান</b></p>
 
-<div class="total" id="total">মোট: ৳0</div>
-<button onclick="sendOrder()">WhatsApp এ অর্ডার পাঠান</button>
+<div class="total" id="total_order">মোট: ৳0</div>
+<button onclick="sendOrderPage()">WhatsApp এ অর্ডার পাঠান</button>
 </div>
 
 <div class="order-box">
@@ -374,19 +416,6 @@ Instant Start • 30 Days Refill • 24/7 WhatsApp Support
 <b>কত সময় লাগে?</b><br>বেশিরভাগ অর্ডার কয়েক মিনিটের মধ্যে শুরু হয়। সর্বোচ্চ ৭২ ঘন্টার সময় লাগতে পারে।  
 </div>
 </div>
-</div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="page">
-<div class="contact-box">
-<h2>যোগাযোগ করুন</h2>
-<p>কোন সমস্যা হলে WhatsApp এ মেসেজ করুন</p>
-<br>
-<a class="btn" href="https://wa.me/8801581619706">WhatsApp Chat</a>
-<br><br>
-<p>bKash Payment</p>
-<h3>01864115856 <button onclick="copyNumber()">Copy</button></h3>
 </div>
 </div>
 
@@ -425,33 +454,65 @@ let randomNumber=Math.floor(1000+Math.random()*9000)
 return "SB"+randomLetter+randomNumber
 }
 
-function sendOrder(){
-let service=document.getElementById("service").options[document.getElementById("service").selectedIndex].text
-let amount=document.getElementById("amount").value
-let link=document.getElementById("link").value
+function calculateOrder(){
+let service = document.getElementById("service_order");
+let price = service.value;
+let serviceName = service.options[service.selectedIndex].text;
+let amount = document.getElementById("amount_order").value;
+let total = 0;
+if(amount=="" || amount<=0){
+    total=0;
+}else{
+    if(serviceName.includes("Boost")){
+        total = price * amount;
+    } else {
+        total = (price/1000) * amount;
+    }
+}
+document.getElementById("total_order").innerText="মোট: ৳"+Math.round(total);
+}
+
+function sendOrderPage(){
+let service = document.getElementById("service_order").options[document.getElementById("service_order").selectedIndex].text;
+let amount = document.getElementById("amount_order").value;
+let link = document.getElementById("link_order").value;
 if(amount=="" || link==""){
 alert("দয়া করে সব ফিল্ড পূরণ করুন")
 return
 }
-let total=document.getElementById("total").innerText
-let orderID=generateOrderID()
-let msg="🚀 New Order%0AOrder ID: "+orderID+
-"%0AService: "+service+
-"%0AQuantity: "+amount+
-"%0ALink: "+link+
-"%0A"+total+
-"%0APayment: bKash 01864115856"
+let total = document.getElementById("total_order").innerText;
+let orderID = generateOrderID();
+let msg = "🚀 New Order%0AOrder ID: "+orderID+
+          "%0AService: "+service+
+          "%0AQuantity: "+amount+
+          "%0ALink: "+link+
+          "%0A"+total+
+          "%0APayment: bKash 01864115856";
 window.open("https://wa.me/8801581619706?text="+msg)
 alert("Order ID: "+orderID)
 }
 
-document.getElementById("service").addEventListener("change",calculate)
-document.getElementById("amount").addEventListener("input",calculate)
-calculate()
+document.getElementById("service_order").addEventListener("change",calculateOrder);
+document.getElementById("amount_order").addEventListener("input",calculateOrder);
+calculateOrder();
 
 function copyNumber(){
 navigator.clipboard.writeText("01864115856")
 alert("bKash Number Copied")
+}
+
+// Order button from services
+function orderNow(serviceName){
+  showPage('order');
+  let select = document.getElementById("service_order");
+  for(let i=0;i<select.options.length;i++){
+    if(select.options[i].text === serviceName){
+      select.selectedIndex = i;
+      break;
+    }
+  }
+  calculateOrder();
+  window.scrollTo(0,0);
 }
 </script>
 
