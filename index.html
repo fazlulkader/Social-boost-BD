@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Social Boost BD | Facebook Followers Service</title>
+    <title>Social Boost BD | Premium Facebook Services</title>
     <style>
         :root {
-            --primary: #38bdf8;
-            --secondary: #0f172a;
+            --primary: #1877F2; /* Facebook Blue */
+            --secondary: #080f1a;
             --accent: #22c55e;
-            --card-bg: #1e293b;
+            --card-bg: rgba(255, 255, 255, 0.05);
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
-            --border: #334155;
+            --border: rgba(255, 255, 255, 0.1);
+            --fb-gradient: linear-gradient(135deg, #1877F2 0%, #0052cc 100%);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--secondary);
+            background-image: radial-gradient(circle at top right, #1a2a44 0%, #080f1a 100%);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.4;
             padding-bottom: 80px;
         }
 
         header {
-            background: rgba(2, 6, 23, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 15px 20px;
+            background: rgba(8, 15, 26, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 12px 15px;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -52,135 +54,193 @@
             font-size: 20px;
             font-weight: 800;
             color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            margin-left: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
+            letter-spacing: -0.5px;
         }
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 20px;
+            padding: 15px;
         }
 
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            padding: 40px 15px;
+            border-radius: 0 0 30px 30px;
         }
 
         .hero h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #fff;
         }
 
+        .hero h1 span { color: var(--primary); }
+
         .main-btn {
-            background: var(--primary);
-            color: #000;
+            background: var(--fb-gradient);
+            color: #fff;
             padding: 12px 25px;
-            border-radius: 10px;
+            border-radius: 50px;
             font-weight: 700;
             border: none;
             cursor: pointer;
-            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
         }
 
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-card span { font-size: 24px; display: block; margin-bottom: 5px; }
+
+        /* Service Cards - 2 Columns */
         .packages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 18px;
             border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 10px;
+            color: var(--text-dim);
+            margin-bottom: 10px;
         }
 
         .price {
             color: var(--accent);
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 800;
-            margin: 10px 0;
+            margin-bottom: 10px;
         }
 
+        .order-btn-small {
+            background: rgba(24, 119, 242, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-btn-small:hover { background: var(--primary); color: #fff; }
+
+        /* Order Form & UI */
         .order-box {
             background: var(--card-bg);
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 20px;
             border: 1px solid var(--border);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         input, select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #0f172a;
+            padding: 14px;
+            margin-bottom: 12px;
+            background: #111a27;
             border: 1px solid var(--border);
             color: white;
             border-radius: 10px;
-            font-size: 16px;
+            font-size: 15px;
+            outline: none;
         }
 
+        input:focus { border-color: var(--primary); }
+
         .total {
-            background: rgba(56, 189, 248, 0.1);
+            background: var(--fb-gradient);
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
             font-size: 18px;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
+            color: #fff;
+            margin-bottom: 12px;
         }
 
         .whatsapp-btn {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             background: var(--accent);
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             color: white;
             font-size: 16px;
             font-weight: 700;
-            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
         .copy-badge {
-            background: #334155;
-            padding: 2px 8px;
+            background: var(--primary);
+            padding: 3px 8px;
             border-radius: 5px;
             font-size: 11px;
+            color: #fff;
+            margin-left: 8px;
             cursor: pointer;
-            color: var(--primary);
         }
 
         .faq-item {
-            background: #1e293b;
+            background: rgba(255, 255, 255, 0.03);
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 10px;
             border: 1px solid var(--border);
+            font-size: 13px;
         }
 
+        /* Mobile Nav */
         .mobile-nav {
             display: flex;
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            bottom: 0; left: 0; right: 0;
+            background: rgba(8, 15, 26, 0.95);
+            backdrop-filter: blur(15px);
             border-top: 1px solid var(--border);
             padding: 10px 0;
             z-index: 1001;
@@ -189,47 +249,66 @@
         .nav-item {
             text-align: center;
             color: var(--text-dim);
-            font-size: 11px;
+            font-size: 10px;
             flex: 1;
             text-decoration: none;
         }
 
         .nav-item.active { color: var(--primary); }
+        .nav-item span { display: block; font-size: 20px; margin-bottom: 2px; }
 
-        .page { display: none; animation: fadeIn 0.3s; }
+        .page { display: none; animation: slideIn 0.4s ease-out; }
         .page.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        @media (min-width: 769px) { .mobile-nav { display: none; } }
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        @media (min-width: 769px) { 
+            .mobile-nav { display: none; } 
+            .packages { grid-template-columns: repeat(4, 1fr); }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <nav>
-        <a class="logo" onclick="showPage('home')">Social Boost BD</a>
-        <div class="nav-links">
-            <a onclick="showPage('home')">Home</a>
-            <a onclick="showPage('services')">Services</a>
-            <a onclick="showPage('order')">Order</a>
-            <a onclick="showPage('contact')">Contact</a>
-        </div>
+        <div class="logo" onclick="showPage('home')">SocialBoost BD</div>
     </nav>
 </header>
 
 <div id="home" class="page active">
     <div class="hero">
-        <h1>ফেসবুক পেজ বুস্ট করুন <br>সবচেয়ে কম দামে!</h1>
-        <p>নিরাপদ ও দ্রুত ডেলিভারি গ্যারান্টি</p><br>
-        <button class="main-btn" onclick="showPage('services')">প্যাকেজ দেখুন</button>
+        <h1>ফেসবুক সার্ভিস এখন <br><span>আরও দ্রুত ও নিরাপদ</span></h1>
+        <p style="font-size:12px; color:var(--text-dim); margin-top:5px;">১০০% রিয়েল • অটোমেটেড প্যানেল • পাসওয়ার্ড লাগবে না</p><br>
+        <button class="main-btn" onclick="showPage('services')">সার্ভিসগুলো দেখুন</button>
+    </div>
+
+    <div class="container">
+        <h3 style="text-align:center; font-size:16px; margin-bottom:15px; color:var(--primary);">কেন আমাদের পছন্দ করবেন?</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span>⚡</span>
+                <p style="font-size:12px; font-weight:700;">ইন্সট্যান্ট স্টার্ট</p>
+            </div>
+            <div class="feature-card">
+                <span>🔐</span>
+                <p style="font-size:12px; font-weight:700;">সম্পূর্ণ সেফ</p>
+            </div>
+            <div class="feature-card">
+                <span>🔄</span>
+                <p style="font-size:12px; font-weight:700;">রিফিল সুবিধা</p>
+            </div>
+            <div class="feature-card">
+                <span>💬</span>
+                <p style="font-size:12px; font-weight:700;">লাইভ সাপোর্ট</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="services" class="page">
     <div class="container">
-        <h2 style="text-align:center; margin-bottom:20px;">আমাদের সার্ভিসসমূহ</h2>
+        <h3 style="text-align:center; margin-bottom:15px; color:var(--primary);">বেস্ট ডিল প্যাকেজসমূহ</h3>
         <div class="packages" id="service-list"></div>
     </div>
 </div>
@@ -237,72 +316,72 @@
 <div id="order" class="page">
     <div class="container">
         <div class="order-box">
-            <h3 style="text-align:center; margin-bottom:15px;">অর্ডার করুন</h3>
+            <h3 style="text-align:center; margin-bottom:20px; font-size:18px;">নতুন অর্ডার দিন</h3>
             <select id="service_order" onchange="calculateOrder()"></select>
-            <input type="number" id="amount_order" placeholder="পরিমাণ লিখুন" oninput="calculateOrder()">
-            <input type="text" id="link_order" placeholder="পেজ বা প্রোফাইল লিংক">
+            <input type="number" id="amount_order" placeholder="পরিমাণ লিখুন (যেমন: 1000)" oninput="calculateOrder()">
+            <input type="text" id="link_order" placeholder="পেজ বা প্রোফাইল লিংক দিন">
             <div class="total" id="total_order">মোট: ৳0</div>
-            <button class="whatsapp-btn" onclick="sendOrder()">WhatsApp-এ অর্ডার দিন</button>
+            <button class="whatsapp-btn" onclick="sendOrder()">WhatsApp-এ অর্ডার পাঠান</button>
         </div>
 
-        <div class="order-box" style="border-left: 4px solid var(--accent);">
-            <h3 style="color: var(--accent); margin-bottom:10px;">💳 পেমেন্ট নির্দেশনা</h3>
-            <p style="font-size:14px;">১. <b>01864115856</b> নাম্বারে <b>Send Money</b> করুন।</p>
-            <p style="font-size:14px;">২. পেমেন্ট শেষে Form পূরণ করে WhatsApp-এ পাঠান।</p>
-            <p style="font-size:14px; margin-top:10px;">
-                <b>bKash Personal:</b> 01864115856 
-                <span class="copy-badge" onclick="copyNumber()">Copy</span>
-            </p>
+        <div class="order-box" style="border-left: 4px solid var(--accent); background: rgba(34, 197, 94, 0.05);">
+            <p style="font-size:14px;"><b>বিকাশ: 01864115856</b> <span class="copy-badge" onclick="copyNumber()">Copy</span></p>
+            <p style="font-size:12px; color:var(--text-dim); margin-top:5px;">টাকা পাঠিয়ে হোয়াটসঅ্যাপে স্ক্রিনশট দিন।</p>
         </div>
 
         <div style="margin-top:20px;">
-            <h3 style="margin-bottom:15px;">সাধারণ প্রশ্ন (FAQ)</h3>
-            <div class="faq-item">
-                <b style="color:var(--primary)">ফলোয়ার কি ড্রপ হবে?</b><br>
-                <span style="font-size:13px; color:var(--text-dim)">অধিকাংশ প্যাকেজে ৩০ দিনের রিফিল সুবিধা আছে।</span>
-            </div>
-            <div class="faq-item">
-                <b style="color:var(--primary)">পাসওয়ার্ড কি লাগবে?</b><br>
-                <span style="font-size:13px; color:var(--text-dim)">না, আপনার পাসওয়ার্ডের প্রয়োজন নেই।</span>
-            </div>
+            <h4 style="margin-bottom:15px; font-size:16px; text-align:center;">সচরাচর কিছু প্রশ্ন</h4>
+            <div class="faq-item"><b>ফলোয়ার কি ড্রপ হবে?</b><br>না, ড্রপ হওয়ার সম্ভাবনা নেই। ড্রপ হলে রিফিল গ্যারান্টি আছে।</div>
+            <div class="faq-item"><b>পেমেন্ট করার কতক্ষণ পর কাজ শুরু হয়?</b><br>পেমেন্ট ভেরিফাই হওয়ার ৫-৩০ মিনিটের মধ্যেই কাজ শুরু হয়।</div>
         </div>
     </div>
 </div>
 
 <div id="contact" class="page">
-    <div class="container" style="text-align:center;">
+    <div class="container" style="text-align:center; padding-top:40px;">
         <div class="order-box">
-            <h2>যোগাযোগ</h2>
-            <p>যেকোনো প্রয়োজনে WhatsApp-এ মেসেজ দিন</p><br>
-            <a href="https://wa.me/8801581619706" class="main-btn" style="background:var(--accent); color:white;">WhatsApp Chat</a>
+            <h2 style="color:var(--primary)">সহায়তা লাগবে?</h2>
+            <p style="font-size:14px; color:var(--text-dim); margin:15px 0;">যেকোনো জিজ্ঞাসা বা সমস্যার জন্য সরাসরি হোয়াটসঅ্যাপ করুন।</p>
+            <a href="https://wa.me/8801581619706" class="whatsapp-btn" style="text-decoration:none; display:block;">Message on WhatsApp</a>
         </div>
     </div>
 </div>
 
 <div class="mobile-nav">
-    <a onclick="showPage('home')" class="nav-item active" id="m-home">🏠<br>Home</a>
-    <a onclick="showPage('services')" class="nav-item" id="m-services">🛠️<br>Services</a>
-    <a onclick="showPage('order')" class="nav-item" id="m-order">🛒<br>Order</a>
-    <a onclick="showPage('contact')" class="nav-item" id="m-contact">💬<br>Contact</a>
+    <a onclick="showPage('home')" class="nav-item active" id="m-home"><span>🏠</span>Home</a>
+    <a onclick="showPage('services')" class="nav-item" id="m-services"><span>🛠️</span>Services</a>
+    <a onclick="showPage('order')" class="nav-item" id="m-order"><span>🛒</span>Order</a>
+    <a onclick="showPage('contact')" class="nav-item" id="m-contact"><span>💬</span>Support</a>
 </div>
 
 <script>
     const services = [
-        { name: "Real Active Followers", price: 200 },
-        { name: "Bangladesh Followers", price: 120 },
-        { name: "Worldwide Followers", price: 90 },
-        { name: "Bot Followers", price: 40 },
-        { name: "Facebook Page 🇧🇩 Likes", price: 180 },
-        { name: "BD Facebook Post Likes", price: 250 },
-        { name: "Video/Reels Views", price: 20 },
-        { name: "Boost Service ($)", price: 150 }
+        { name: "Real Active Followers", price: 200, info: "High Quality • No Drop" },
+        { name: "BD Followers", price: 120, info: "Speed: 3k/day • 30d Refill" },
+        { name: "Global Followers", price: 90, info: "Speed: 50k/day • 30d Refill" },
+        { name: "Bot Followers", price: 40, info: "Instant Start • No Refill" },
+        { name: "Page 🇧🇩 Likes", price: 180, info: "100% Real People" },
+        { name: "Post 🇧🇩 Likes", price: 250, info: "Instant • Top Quality" },
+        { name: "Video Views", price: 20, info: "Cheap • Fast Delivery" },
+        { name: "Boost Service ($)", price: 150, info: "Per 1$ Boost Service" }
     ];
 
     function loadServices() {
         const list = document.getElementById('service-list');
         const select = document.getElementById('service_order');
         services.forEach(s => {
-            list.innerHTML += `<div class="card"><h3>${s.name}</h3><div class="price">৳${s.price} / 1k</div><button class="main-btn" onclick="orderNow('${s.name}')" style="width:100%">Order Now</button></div>`;
+            list.innerHTML += `
+                <div class="card">
+                    <div>
+                        <h3>${s.name}</h3>
+                        <p>${s.info}</p>
+                    </div>
+                    <div>
+                        <div class="price">৳${s.price}</div>
+                        <button class="order-btn-small" onclick="orderNow('${s.name}')">অর্ডার দিন</button>
+                    </div>
+                </div>
+            `;
             select.innerHTML += `<option value="${s.price}">${s.name}</option>`;
         });
     }
@@ -336,13 +415,14 @@
         const s = document.getElementById('service_order').options[document.getElementById('service_order').selectedIndex].text;
         const a = document.getElementById('amount_order').value;
         const l = document.getElementById('link_order').value;
-        if(!a || !l) return alert("তথ্য পূরণ করুন");
-        const msg = `🚀 *NEW ORDER*%0AService: ${s}%0AQuantity: ${a}%0ALink: ${l}%0ATotal: ${document.getElementById('total_order').innerText}`;
+        const t = document.getElementById('total_order').innerText;
+        if(!a || !l) return alert("দয়া করে পরিমাণ এবং লিংক প্রদান করুন");
+        const msg = `🚀 *NEW ORDER*%0A-----------------%0A*Service:* ${s}%0A*Quantity:* ${a}%0A*Link:* ${l}%0A*${t}*%0A-----------------%0A_Social Boost BD_`;
         window.open(`https://wa.me/8801581619706?text=${msg}`);
     }
 
-    function copyNumber() { navigator.clipboard.writeText("01864115856"); alert("Copied!"); }
+    function copyNumber() { navigator.clipboard.writeText("01864115856"); alert("বিকাশ নাম্বার কপি হয়েছে!"); }
     window.onload = loadServices;
 </script>
 </body>
-  </html>
+</html>
